@@ -86,35 +86,35 @@ var b = {
 	intervalo: setInterval(function(){
 
 		b.Mac.edad = Math.ceil(Math.random()*2)
-		console.log("b.Mac.edad", b.Mac.edad);
+		//console.log("b.Mac.edad", b.Mac.edad);
 		b.Mac.velocidad = Math.ceil(Math.random()*2)
-		console.log("b.Mac.velocidad", b.Mac.velocidad);
+		//console.log("b.Mac.velocidad", b.Mac.velocidad);
 		b.Mac.tono = Math.ceil(Math.random()*2)
-		console.log("b.Mac.tono", b.Mac.tono);
+		//console.log("b.Mac.tono", b.Mac.tono);
 
 		b.Smith.edad = Math.ceil(Math.random()*2)
-		console.log("b.Smith.edad", b.Smith.edad);
+		//console.log("b.Smith.edad", b.Smith.edad);
 		b.Smith.velocidad = Math.ceil(Math.random()*2)
-		console.log("b.Smith.velocidad", b.Smith.velocidad);
+		//console.log("b.Smith.velocidad", b.Smith.velocidad);
 		b.Smith.tono = Math.ceil(Math.random()*2)
-		console.log("b.Smith.tono", b.Smith.tono);
+		//console.log("b.Smith.tono", b.Smith.tono);
 
 		b.Jack.edad = Math.ceil(Math.random()*2)
-		console.log("b.Jack.edad", b.Jack.edad);
+		//console.log("b.Jack.edad", b.Jack.edad);
 		b.Jack.velocidad = Math.ceil(Math.random()*2)
-		console.log("b.Jack.velocidad", b.Jack.velocidad);
+		//console.log("b.Jack.velocidad", b.Jack.velocidad);
 		b.Jack.tono = Math.ceil(Math.random()*2)
-		console.log("b.Jack.tono", b.Jack.tono);
+		//console.log("b.Jack.tono", b.Jack.tono);
 
 		b.Willy.edad = Math.ceil(Math.random()*2)
-		console.log("b.Willy.edad", b.Willy.edad);
+		//console.log("b.Willy.edad", b.Willy.edad);
 		b.Willy.velocidad = Math.ceil(Math.random()*2)
-		console.log("b.Willy.velocidad", b.Willy.velocidad);
+		//console.log("b.Willy.velocidad", b.Willy.velocidad);
 		b.Willy.tono = Math.ceil(Math.random()*2)
-		console.log("b.Willy.tono", b.Willy.tono);
+		//console.log("b.Willy.tono", b.Willy.tono);
 
 		if(b.resultado()){
-			clearInterval(b.intervalo)
+			clearInterval(b.intervalo);
 			console.log("Caballo de Mac", b.Mac)
 			console.log("Caballo de Smith ", b.Smith)
 			console.log("Caballo de Jack ", b.Jack)
@@ -127,18 +127,72 @@ var b = {
 CASO 3. LOS CUATRO PERROS. 
 
 Tenemos cuatro perros: un galgo, un dogo, un alano y un podenco. Éste último come más que el galgo; el alano come más que el galgo y menos que el dogo, pero éste come más que el podenco. ¿Cuál de los cuatro perros come menos?.
+
+Galgo   hambre: menos
+Dogo    hambre: mas
+Alano   hambre: menos
+Podenco hambre: menos
 =============================================*/
+
+var c = {
+
+	Galgo: {hambre:0},
+	Dogo: {hambre: 0},
+	Alano: {hambre: 0},
+	Podenco: {hambre: 0},
+	resultado: function(){
+
+		if(	c.Podenco.hambre	> c.Galgo.hambre 	&&
+			c.Alano.hambre		> c.Galgo.hambre 	&&
+			c.Dogo.hambre		> c.Alano.hambre 	&&
+			c.Dogo.hambre 		> c.Podenco.hambre
+			){
+			return true;
+		}
+		return false;
+	},
+	intervalo: setInterval(function(){
+		c.Podenco.hambre = Math.ceil(Math.random()*4)
+		//console.log("c.Podenco", c.Podenco.hambre);
+		c.Alano.hambre = Math.ceil(Math.random()*4)
+		//console.log("c.Alano", c.Alano.hambre);
+		c.Dogo.hambre = Math.ceil(Math.random()*4)
+		//console.log("c.Dogo", c.Dogo.hambre);
+		c.Galgo.hambre = Math.ceil(Math.random()*4)
+		//console.log("c.Galgo", c.Galgo.hambre);
+		if (c.resultado()){
+			clearInterval(c.intervalo);
+			console.log("El Podenco come: ", c.Podenco.hambre)
+			console.log("El Alano come: ", c.Alano.hambre)
+			console.log("El Dogo come: ", c.Dogo.hambre)
+			console.log("El Galgo come: ", c.Galgo.hambre)
+		}
+	},1)	
+}
 
 /*=============================================
 CASO 4. SEIS AMIGOS DE VACACIONES. 
 
 Seis amigos desean pasar sus vacaciones juntos y deciden, cada dos, utilizar diferentes medios de transporte; sabemos que Alejandro no utiliza el coche ya que éste acompaña a Benito que no va en avión. Andrés viaja en avión. Si Carlos no va acompañado de Darío ni hace uso del avión, podría Vd. decirnos en qué medio de transporte llega a su destino Tomás.
+Alejando y Benito = Auto: 0 Avion: 0
+Andres y Dario    = Auto: 0 Avion: 1
+Carlos y Tomas    = Auto: 1 Avion: 0
 =============================================*/
+var d = {
+	Alejando-y-Benito: {auto: 0, avion: 0},
+	Andres-y-Dario: {auto: 0, avion: 0},
+	Carlos-y-Tomas: {auto: 0, avion: 0},
+}
+
 
 /*=============================================
 CASO 5. SILENCIO. 
 
 Si Ángela habla más bajo que Rosa y Celia habla más alto que Rosa, ¿habla Ángela más alto o más bajo que Celia?
+
+Angela -Rosa
+Rosa
+Celia +Rosa
 =============================================*/
 
 

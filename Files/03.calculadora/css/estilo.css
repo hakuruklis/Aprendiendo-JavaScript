@@ -63,6 +63,11 @@ center{
 	color: white;
 }
 
+#calculadora ul li:active{
+	background: magenta;
+	color: white;
+}
+
 #borrar{
 	position: absolute;
 	bottom: 10px;
@@ -74,4 +79,12 @@ center{
 	border: 5px solid #bbb;
 	color: white;
 	cursor: pointer;
+}
+
+#borrar:hover{
+	background: purple;
+}
+
+#borrar:active{
+	background: cyan;
 }

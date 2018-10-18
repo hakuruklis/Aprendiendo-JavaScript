@@ -5,7 +5,7 @@ OBJETO CON LAS PROPIEDADES DE LA CALCULADORA
 var p = {
 
 	teclas: document.querySelectorAll("#calculadora ul li")
-	
+	accion: null;
 
 
 }
@@ -28,7 +28,7 @@ var m = {
 
 	oprimirTecla: function(tecla){
 
-		console.log(tecla.target)
+		p.accion = tecla.target.getAttribute("class")
 
 	}
 }

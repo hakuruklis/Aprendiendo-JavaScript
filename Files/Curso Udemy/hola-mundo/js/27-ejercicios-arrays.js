@@ -17,7 +17,6 @@ function mostrarArray(elementos, textoCustom = ""){
     });
     document.write("</ul>");
 }
-
 //PEDIR LOS NUMEROS
 var numeros = new Array(6);
 
@@ -39,6 +38,23 @@ console.log(numeros);
 mostrarArray(numeros)
 
 //ORDENAR Y MOSTRAR
-numeros.sort();
-console.log(numeros);
+numeros.sort(function(a, b){return a-b});
 mostrarArray(numeros, "Ordenados");
+
+//INVERTIR Y MOSTRAR
+numeros.reverse();
+mostrarArray(numeros, "Revertido");
+
+//CANTIDAD DE ELEMENTOS DEL ARRAY
+document.write("<h1>El array tiene " + numeros.length + " elementos</h1>")
+
+//BUSCAR NUMERO EN UN ARRAY Y MOSTRAR EL INDICE
+var busqueda = parseInt(prompt("Ingresa el numero a buscar:",0));
+var posicion = numeros.findIndex(numero => numero == busqueda);
+
+if(posicion && posicion != -1){
+    document.write("<h1>Encontrado</h1>");
+    document.write("<h1>Posición de la busqueda: "+ posicion +"</h1>");
+}else{
+    document.write("<h1>No encontrado</h1>")
+}
